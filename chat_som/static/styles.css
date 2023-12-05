@@ -1,0 +1,15 @@
+/* Text shape for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+    font-weight: bold;    
+    font-family: 'Consolas', 'Courier New', Monaco, monospace;
+}
+
+/* Colors for brand */
+nav .navbar-brand .white
+{
+    color: #ffffff;
+}
+
+
