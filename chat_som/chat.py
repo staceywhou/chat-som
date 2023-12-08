@@ -1,28 +1,27 @@
 import os
 import key
 import tabulate
-# Set API keys from environment variables
+# Set API key
 os.environ["OPENAI_API_KEY"] = key.OPENAI_API_KEY
 
-#Import relevant libraries
+# Import langchain
 from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOpenAI
 from langchain.document_loaders import CSVLoader
 from langchain.indexes import VectorstoreIndexCreator
 from langchain.vectorstores import DocArrayInMemorySearch
 
-#Reading in the file
+# Load the csv file
 file = '/workspaces/chat-som/chat_som/course_list/courseslist.csv'
 loader = CSVLoader(file_path=file, encoding='utf-8')
 data = loader.load()
 
-#Creating a vector store and index using DocArrayInMemory Search---Automated chunking by Rows in CSV file
+# chunk the data and import into arrays
 index = VectorstoreIndexCreator(
     vectorstore_cls=DocArrayInMemorySearch
 ).from_loaders([loader])
 
-#Setting up the QA retreival chain
-
+# set up the retreival chain
 llm = ChatOpenAI(temperature = 0.0)
 qa = RetrievalQA.from_chain_type(
     llm=llm,
@@ -34,6 +33,7 @@ qa = RetrievalQA.from_chain_type(
     }
 )
 
+# function that takes a message and returns a response
 def chat(user_message):
     """Get a message from user and generate a response"""
     response = qa.run(user_message)
