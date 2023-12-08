@@ -25,3 +25,12 @@ https://www.neum.ai/post/llm-spreadsheets
 pip install -r requirements.txt
 
 https://stackoverflow.com/questions/77004853/chromadb-langchain-with-sentencetransformerembeddingfunction-throwing-sqlite3#:~:text=RuntimeError%3A%20Your%20system%20has%20an%20unsupported%20version%20of,url%20and%20the%20informative%20source%20code%20of%20Chroma.
+
+sudo apt update
+sudo apt install apache2 php libapache2-mod-php
+
+If running into trouble importing doc array:
+https://stackoverflow.com/questions/76880224/error-using-using-docarrayinmemorysearch-in-langchain-could-not-import-docarray
+
+pip3  install -U docarray
+pip3  install pydantic==1.10.9

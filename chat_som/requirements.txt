@@ -4,5 +4,8 @@ pypdf
 chromadb
 tiktoken
 pandas
-sudo apt update
-sudo apt install apache2 php libapache2-mod-php
+flask
+langchain-experimental
+tabulate
+langchain[docarray]
+pydantic

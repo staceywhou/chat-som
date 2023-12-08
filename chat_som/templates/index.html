@@ -15,6 +15,8 @@
     <!-- Display the response -->
     {% if response %}
         <h2>Response:</h2>
-        <p>{{ response }}</p>
+        {% for paragraph in response.split('\n') %}
+            <p>{{ paragraph }}</p>
+        {% endfor %}
     {% endif %}
 {% endblock %}

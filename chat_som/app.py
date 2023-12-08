@@ -4,7 +4,7 @@ import csv
 import pandas as pd
 import numpy as np
 import openai
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, flash, redirect, render_template, request, session, jsonify
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -15,8 +15,7 @@ from datetime import datetime
 # Configure application
 app = Flask(__name__)
 
-# import chat.py
-import chat
+from chat import chat
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_PERMANENT"] = False
@@ -223,6 +222,6 @@ def send_prompt():
     if request.method == 'POST':
         user_prompt = request.form['prompt']
         # Call the function to get the response from GPT
-        response = get_gpt_response(user_prompt)  # Replace with your function to get the GPT response
+        response = chat(user_prompt)  # Replace with your function to get the GPT response
 
     return render_template('index.html', response=response)
