@@ -14,9 +14,11 @@
 
     <!-- Display the response -->
     {% if response %}
-        <h2>Response:</h2>
-        {% for paragraph in response.split('\n') %}
-            <p>{{ paragraph }}</p>
-        {% endfor %}
+        <div class="response-box">
+            <h2>Response:</h2>
+            {% for paragraph in response.split('\n') %}
+                <p>{{ paragraph }}</p>
+            {% endfor %}
+        </div>
     {% endif %}
 {% endblock %}
