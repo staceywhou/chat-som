@@ -1,15 +1,60 @@
+/* Used guidance from the following video https://www.youtube.com/watch?v=biI9OFH6Nmg&t=586s to help style the course-table code */
+
 /* Text shape for brand */
-nav .navbar-brand
-{
+nav .navbar-brand{
     font-size: xx-large;
     font-weight: bold;    
     font-family: 'Consolas', 'Courier New', Monaco, monospace;
 }
 
 /* Colors for brand */
-nav .navbar-brand .white
-{
+nav .navbar-brand .white{
     color: #ffffff;
 }
 
+/* Styling for the course table */
+.course-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family:sans-serif;
+    min-width:400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
 
+/* Styling for the table header */
+.course-table thead tr {
+    background-color: #212529;
+    color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.1em;
+}
+
+/* Adds border to bottom of each row */
+.course-table tbody tr {
+    border-bottom: 1px solid #212529;
+}
+/* Changes every other row to a lighter color for readability */
+.course-table tbody tr:nth-child(even){
+    background-color: #f7f7f7;
+}
+
+/* Adds a thicker border to bottom of last row for the border */
+.course-table tbody tr:last-of-type {
+    border-bottom:3px solid #212529;
+}
+
+/* Changes the color of the row when you hover over the table */
+.course-table tbody tr:hover {
+    background-color: #e6e6fa;
+}
+
+/* Styling for the Chat Bot response */
+.response-box {
+    border: 2px solid #212529;
+    margin: 20px auto;
+    background-color: #212529;
+    color: #ffffff;
+    max-width: 1200px;
+}
